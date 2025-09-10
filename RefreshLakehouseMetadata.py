@@ -3,6 +3,11 @@ import time
 import notebookutils
 import json
 
+#set your lakehouse ID and Lakehouse Name first
+
+workspace_id = ""
+lakehouse_name = ""
+
 def get_sql_endpoint_for_lakehouse(workspace_id, lakehouse_name, access_token):
     """Get the SQL endpoint ID for a specific lakehouse"""
     headers = {
@@ -165,9 +170,7 @@ def refresh_sql_endpoint_and_wait(lakehouse_name, workspace_id, max_wait_minutes
 
 # Usage
 try:
-    workspace_id = ""
-    lakehouse_name = "lakehouse_main"
-    
+   
     refresh_sql_endpoint_and_wait(
         lakehouse_name=lakehouse_name,
         workspace_id=workspace_id,
